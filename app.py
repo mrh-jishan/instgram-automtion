@@ -31,7 +31,7 @@ def get_client():
 def convert_image(image_path, quote):
     im = generate_captioned(quote, image_path=image_path, size=(1080, 1350), font_path=font_path, filter_color=(0, 0, 0, 40))
     im.convert('RGB').save(IMAGE_OUTPUT_FILE)
-    im.show()
+    # im.show()
 
 def get_image_id():
     pu = PyUnsplash(api_key=UNSPLASH_ACCESS_KEY)
