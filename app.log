@@ -1,0 +1,8 @@
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.unsplash.com:443
+DEBUG:urllib3.connectionpool:https://api.unsplash.com:443 "GET /photos HTTP/1.1" 200 4898
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.unsplash.com:443
+DEBUG:urllib3.connectionpool:https://api.unsplash.com:443 "GET /photos/random?count=1&featured=True&query=splash HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): unsplash.com:443
+DEBUG:urllib3.connectionpool:https://unsplash.com:443 "GET /photos/IeRgPDoPpzU/download?ixid=MnwzMzkxMzV8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTU1NzE3ODA HTTP/1.1" 302 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): images.unsplash.com:443
+DEBUG:urllib3.connectionpool:https://images.unsplash.com:443 "GET /photo-1611496855431-6501b335c67f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb HTTP/1.1" 200 750260
