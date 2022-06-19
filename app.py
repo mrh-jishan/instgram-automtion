@@ -19,12 +19,12 @@ INSTAGRAM_PASSWORD = os.environ.get("INSTAGRAM_PASSWORD")
 print(f"INSTAGRAM_PASSWORD: {INSTAGRAM_PASSWORD}")
 
 IMAGE_OUTPUT_FILE = "RGB_IMAGE_OUTPUT.jpg"
-font_path = './Roboto/Roboto-Regular.ttf'
+font_path = '/app/Roboto/Roboto-Regular.ttf'
 
 cl = Client()
 
 def get_client():
-    cl.load_settings('dump.json')
+    cl.load_settings('/app/dump.json')
     cl.login(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD)
     cl.account_info().dict()
 
