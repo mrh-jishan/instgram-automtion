@@ -7,7 +7,7 @@ from os.path import join, dirname, abspath
 from dotenv import load_dotenv
 
 
-dotenv_path = join(dirname(abspath("__file__")), '.env')
+dotenv_path = join(dirname(abspath("__file__")), '/app/.env')
 load_dotenv(dotenv_path)
 
 UNSPLASH_ACCESS_KEY = os.environ.get("UNSPLASH_ACCESS_KEY")
