@@ -18,15 +18,10 @@ print(f"INSTAGRAM_USERNAME: {INSTAGRAM_USERNAME}")
 INSTAGRAM_PASSWORD = os.environ.get("INSTAGRAM_PASSWORD")
 print(f"INSTAGRAM_PASSWORD: {INSTAGRAM_PASSWORD}")
 
-IMAGE_OUTPUT_FILE = "RGB_IMAGE_OUTPUT.jpg"
+IMAGE_OUTPUT_FILE = "/app/RGB_IMAGE_OUTPUT.jpg"
 font_path = '/app/Roboto/Roboto-Regular.ttf'
 
 cl = Client()
-
-def get_client():
-    cl.load_settings('/app/dump.json')
-    cl.login(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD)
-    cl.account_info().dict()
 
 def convert_image(image_path, quote):
     im = generate_captioned(quote, image_path=image_path, size=(1080, 1350), font_path=font_path, filter_color=(0, 0, 0, 40))
@@ -49,10 +44,12 @@ def get_quotes():
     return response.json()["content"]
 
 def post_instagram(quote):
-    get_client()
-    hash_tags = "#bot #love #insta"
+    # cl.load_settings('/app/dump.json')
+    cl.login(INSTAGRAM_USERNAME, INSTAGRAM_PASSWORD)
+    cl.account_info().dict()
+    hash_tags = f"{quote} #bot #love #insta"
     # extract_hashtags(quote)
-    cl.photo_upload(
+    media = cl.photo_upload(
         IMAGE_OUTPUT_FILE,
         hash_tags,
         extra_data={
@@ -61,6 +58,7 @@ def post_instagram(quote):
             "disable_comments": 0,
         }
     )
+    media.dict()
 
 def main():
     quote =  get_quotes()
